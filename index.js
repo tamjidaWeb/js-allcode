@@ -854,22 +854,22 @@ let y = 7;
 
 
 
-const products = [
-    { name: 'shampoo', price: 300, quantity: 2},
-    { name: 'comb', price: 100 ,quantity: 3},
-    { name: 'shirt', price: 700, quantity: 5},
-    { name: 'pant', price: 1200, quantity: 1},
-];
-function cartTotal(products){
-    let total =0;
-    for (const product of products){
-        const thisProductCost = product.price*product.quantity;
-        total = total+ thisProductCost;
-    }
-    return total;
-}
+// const products = [
+//     { name: 'shampoo', price: 300, quantity: 2},
+//     { name: 'comb', price: 100 ,quantity: 3},
+//     { name: 'shirt', price: 700, quantity: 5},
+//     { name: 'pant', price: 1200, quantity: 1},
+// ];
+// function cartTotal(products){
+//     let total =0;
+//     for (const product of products){
+//         const thisProductCost = product.price*product.quantity;
+//         total = total+ thisProductCost;
+//     }
+//     return total;
+// }
 
-const shoppingCart = cartTotal(products);
+// const shoppingCart = cartTotal(products);
 // console.log(shoppingCart);
 
 
@@ -940,20 +940,20 @@ const shoppingCart = cartTotal(products);
 
 
 
-function add( num1, num2){
-    return num1 +num2;
-}
+// function add( num1, num2){
+//     return num1 +num2;
+// }
 
-function substruct(num1 , num2){
-    return num1 -num2;
+// function substruct(num1 , num2){
+//     return num1 -num2;
 
-}
-function multiply(num1, num2){
-    return num1*num2;
-}
-function divide(num1,num2){
-    return num1/num2;
-}
+// }
+// function multiply(num1, num2){
+//     return num1*num2;
+// }
+// function divide(num1,num2){
+//     return num1/num2;
+// }
 
 // function calculator(a,b, operation){
 //     if(operation === 'add'){
@@ -985,77 +985,111 @@ function divide(num1,num2){
 
 
 
-function multiply( num1, num2){
-    if(typeof num1 !== 'number' || typeof num2 !== 'number'){
-        return 'please provide a number';
-    }
-    const mult = num1 * num2;
-    return mult;
+// function multiply( num1, num2){
+//     if(typeof num1 !== 'number' || typeof num2 !== 'number'){
+//         return 'please provide a number';
+//     }
+//     const mult = num1 * num2;
+//     return mult;
+// }
+// const result = multiply(5, 'seven');
+// // console.log(result);
+// function fullName(first, second){
+//     if(typeof first !== 'string'){
+//         return 'first name should be a name';
+//     }
+
+//     else if(typeof second !== 'string'){
+//         return 'second name should be a name';
+//     }
+//     else{
+//         return 'provide sting for both';
+//     }
+//     const full = first + ' ' + second;
+//     return full;
+// }
+// const flNm = fullName('i', 7);
+// // console.log(flNm);
+
+// function getPrice(product){
+//     if(typeof product !== 'object'){
+//         return 'provide an object';
+//     }
+//     const price = product.price;
+//     return price;
+// }
+// // const price = getPrice({name: 'sadia', price:34, color:'brown'});
+// const price = getPrice(5);
+
+// // console.log(price);
+// function getSecond (number){
+//     if(Array.isArray(number)=== false){
+//         return ' provide an array';
+//     }
+//     const second = number[1];
+//     return second;
+// }
+// const second = getSecond(7);
+// console.log(second);
+
+
+
+
+// const student = {
+//     name: 'sakib khan',
+//     id: 121,
+//     address: 'movie cinema',
+//     issingle: true,
+//     friends: ['apu','razz','salman','aamir'],
+//     movies: [{name: 'no 1', year: 2005}, {name: 'king khan', year: 2006}],
+//     act:function(){
+//         console.log('acting like sakib khan')
+//     },
+//     car:{
+//         brand: 'tesla',
+//         price: 5000000,
+//         made: 2025,
+//         manufacturer:{
+//             name: 'tesla',
+//             ceo: 'elon mask',
+//             country: 'USA',
+//         }
+//     }
+
+// }
+// student.act();
+// console.log(student.act);
+
+
+// const product = [
+//     {name: 'phone', price: 30000},
+//     {name: 'laptop', price: 30000},
+
+//     {name: 'phone', price: 30000},
+
+// product[0];
+// product[1];
+
+
+// const products = {
+//     '0':15,
+//     '1':65,
+//     '2':87,
+// }
+
+function add(num1,num2){
+    console.log(num1,num2);
+    console.log(arguments);
 }
-const result = multiply(5, 'seven');
-// console.log(result);
-function fullName(first, second){
-    if(typeof first !== 'string'){
-        return 'first name should be a name';
-    }
+add(12,13,34,78,1);
 
-    else if(typeof second !== 'string'){
-        return 'second name should be a name';
-    }
-    else{
-        return 'provide sting for both';
-    }
-    const full = first + ' ' + second;
-    return full;
+
+
+function add(num1,num2){
+    console.log(num1,num2);
+    console.log(arguments[33]);
 }
-const flNm = fullName('i', 7);
-// console.log(flNm);
-
-
-
-
-
-
-
-function getPrice(product){
-    if(typeof product !== 'object'){
-        return 'provide an object';
-    }
-    const price = product.price;
-    return price;
-}
-// const price = getPrice({name: 'sadia', price:34, color:'brown'});
-const price = getPrice(5);
-
-// console.log(price);
-function getSecond (number){
-    if(Array.isArray(number)=== false){
-        return ' provide an array';
-    }
-    const second = number[1];
-    return second;
-}
-const second = getSecond(7);
-console.log(second);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+add(12,13,45,89);
 
 
 
