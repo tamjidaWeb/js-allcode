@@ -856,26 +856,128 @@ let y = 7;
 
 const products = [
     { name: 'shampoo', price: 300, quantity: 2},
-    { name: 'comb', price: 80 ,quantity: 3},
-    { name: 'shirt', price: 1700, quantity: 5},
-    { name: 'pant', price: 1300, quantity: 1},
+    { name: 'comb', price: 100 ,quantity: 3},
+    { name: 'shirt', price: 700, quantity: 5},
+    { name: 'pant', price: 1200, quantity: 1},
 ];
 function cartTotal(products){
+    let total =0;
     for (const product of products){
-        console.log(product);
+        const thisProductCost = product.price*product.quantity;
+        total = total+ thisProductCost;
     }
+    return total;
 }
 
 const shoppingCart = cartTotal(products);
-console.log(shoppingCart);
+// console.log(shoppingCart);
+
+
+
+
+
+
+//  upto 100: --> 100
+// more than 101-200 --> 90
+//more than 200 --70
+
 
+// function discountPrice(quantity){
+//     if(quantity <=100){
+//         const total = quantity *100;
+//         return total;
+//     }
+//     else if(quantity>101 && quantity<=200){
+//         const total = quantity *90;
+//         return total;
+//     }
+//     else{
+//         const total = quantity *70;
+//         return total;
+//     }
+// }
 
+// const total = discountPrice(202);
+// console.log(total);
 
 
 
+// first 100 --> 100
+// 101 to 200 --> 90
+//above 200 -->70
+
+// function layerdDiscountTotal(quantity){
+//     const first100Price =100;
+//     const second100Price =90;
+//     const above200Price = 70;
+
+
+//     if(quantity <= 100){
+//         const total = quantity * first100Price;
+//         return total;
+//     }
 
+//     else if( quantity<=200){
+//         const first100Total = 100* first100Price;
+//         const remainingQuantity = quantity -100;
+//         const remainingTotal = remainingQuantity * second100Price;
+//         const total = first100Price + remaingTotal;
+//         return total;
+//     }
+//     else{
+//         const first100Total = 100 * first100Price;
+//         const second100Total = 100 * second100Price;
+//         const remainingQuantity = quantity -200;
+//         const remainingTotal = remainingQuantity * above200Price;
+//         const total = first100Total + second100Total + remainingTotal;
+//         return total;
+//     }
+// }
 
+// const totall= layerdDiscountTotal(201);
+// console.log(totall);
+
+
+
+
+function add( num1, num2){
+    return num1 +num2;
+}
+
+function substruct(num1 , num2){
+    return num1 -num2;
+
+}
+function multiply(num1, num2){
+    return num1*num2;
+}
+function divide(num1,num2){
+    return num1/num2;
+}
+
+// function calculator(a,b, operation){
+//     if(operation === 'add'){
+//         const result = add(a,b);
+//         return result;
+//     }
+//     else if(operation === 'substruction'){
+//         const result = substruct(a,b);
+//         return result;
+//     }
+//     else if(operation === 'multiply'){
+//         const result = multiply(a,b);
+//         return result;
+//     }
+//     else if(operation === 'divide'){
+//         return divide(a,b);
+//     }
+//     else{
+//         return "only 'add', 'subtruct','multiply','divide' operation is allowed";
+//     }
+// }
 
+// const calculate= calculator(5,7,'divide');
+// console.log(calculate);
 
 
 
@@ -883,7 +985,31 @@ console.log(shoppingCart);
 
 
 
+function multiply( num1, num2){
+    if(typeof num1 !== 'number' || typeof num2 !== 'number'){
+        return 'please provide a number';
+    }
+    const mult = num1 * num2;
+    return mult;
+}
+const result = multiply(5, 'seven');
+// console.log(result);
+function fullName(first, second){
+    if(typeof first !== 'string'){
+        return 'first name should be a name';
+    }
 
+    else if(typeof second !== 'string'){
+        return 'second name should be a name';
+    }
+    else{
+        return 'provide sting for both';
+    }
+    const full = first + ' ' + second;
+    return full;
+}
+const flNm = fullName('i', 7);
+// console.log(flNm);
 
 
 
@@ -891,101 +1017,26 @@ console.log(shoppingCart);
 
 
 
+function getPrice(product){
+    if(typeof product !== 'object'){
+        return 'provide an object';
+    }
+    const price = product.price;
+    return price;
+}
+// const price = getPrice({name: 'sadia', price:34, color:'brown'});
+const price = getPrice(5);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(price);
+function getSecond (number){
+    if(Array.isArray(number)=== false){
+        return ' provide an array';
+    }
+    const second = number[1];
+    return second;
+}
+const second = getSecond(7);
+console.log(second);
 
 
 
