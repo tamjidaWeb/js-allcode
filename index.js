@@ -1104,27 +1104,75 @@ const products = {
 // for (const number of numbers){
 //     console.log(number);
 // }
-const items = [
-    {id:1, name: 'walton phone', price: 29000},
-    {id:2, name: 'lenevo', price: 19000},
-    {id:3, name: 'dell ', price: 59000},
-    {id:4, name: 'mac phone ', price: 120000},
-    {id:5, name: 'samsung note 7', price: 22000},
-    {id:6, name: 'xiaomi', price: 79000},
-    {id:7, name: 'nokia old phone', price: 12000},
-];
-// for(const product of items){
-//     console.log(product);
+// const items = [
+//     {id:1, name: 'walton phone', price: 29000},
+//     {id:2, name: 'lenevo', price: 19000},
+//     {id:3, name: 'dell Laptop', price: 59000},
+//     {id:4, name: 'mac phone ', price: 120000},
+//     {id:5, name: 'samsung note 7', price: 22000},
+//     {id:6, name: 'xiaomi', price: 79000},
+//     {id:7, name: 'nokia old phone', price: 12000},
+//     {id:8, name: 'xiaomi laptop', price: 79000},
+//     {id:9, name: 'nokia old phone', price: 12000},
+// ];
+// // for(const product of items){
+// //     console.log(product);
+// // }
+
+// function matchedProducts (items, search){
+//     const matched = [];
+//     for(const item of items){
+// if(item.name.toLowerCase().includes(search.toLowerCase())){
+//     matched.push(item);
+// }  
+//   }
+//   return matched;
+// }
+// const result = matchedProducts(items, 'Laptop');
+// // console.log(result);
+
+
+
+// const numbers = [45, 67, 21, 84, 89];
+// // for(let i=0; i <numbers.length;i++){
+// //     const number = numbers[i];
+// //     console.log(number);
+// // }
+
+
+
+// for(const number of numbers){
+// console.log(number);
 // }
 
-function matchedProducts (items, search){
-    for(const item of items){
-        console.log(item);
-    }
-}
-const result = matchedProducts(items, 'phone');
-console.log(result);
+const items = [
+    {id: 1, name: 'walton phone', price: 34000},
+    {id: 2, name: 'iphone', price: 134000},
+    {id: 3, name: 'mac book LAptop', price: 24000},
+    {id: 4, name: 'xiaomi phone', price: 19000},
+    {id: 5, name: 'lenevo LAPTOP', price: 21000},
+    {id: 6, name: 'dell', price: 76000},
+    {id: 7, name: 'samsund note 7', price: 14000},
+    {id: 8, name: 'nokia old age Phone', price: 47000},
 
+];
+
+// for(const item of items){
+//     console.log(item);
+// }
+
+
+function matchedProducts(items, search){
+    const matched = [];
+    for( const item of items){
+        if(item.name.toLowerCase().includes(search.toLowerCase())){
+            matched.push(item);
+        }
+    }
+    return matched;
+}
+const result = matchedProducts(items, 'laptop');
+console.log(result);
 
 
 
