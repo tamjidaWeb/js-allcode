@@ -1177,6 +1177,160 @@ console.log(result);
 
 
 
+// const disha = 56;
+// const salman = 97;
+
+// if(disha> salman){
+//     console.log('disha will get the strawberry');
+// }
+// else{
+//     console.log('salman will get the strawberry');
+// }
+function getMax( num1 , num2){
+    if(num1>num2){
+        return num1;
+    }
+    else{
+        return num2;
+    }
+}
+
+const max1 = getMax(56,79);
+const max2 = getMax(76, 991);
+const max =getMax( max1, max2);
+// console.log(max);
+
+
+
+// const jim = 56;
+// const kim = 68;
+// const tim =45;
+
+// if(jim> tim && jim>kim){
+//     console.log('jim is the ultimate boss');
+// }
+
+// else if(tim>jim && tim>kim){
+//     console.log('tim is bigger');
+// }
+// else{
+//     console.log('kim will be biggest');
+// }
+
+
+function maxOfThree(jim, kim, tim){
+    if(jim> tim && jim>kim){
+        return 'jim is the ultimate boss';
+    }
+    
+    else if(tim>jim && tim>kim){
+        return 'tim is bigger';
+    }
+    else{
+        return 'kim will be biggest';
+    }
+}
+const maxim = maxOfThree(90, 123, 19);
+// console.log(maxim);
+
+
+
+
+const maxi = Math.max(12,145,1);
+// console.log(maxi);
+
+
+
+const heights = [ 65, 76, 82, 90, 60, 69];
+const numbers= [0];
+
+function getHeight( numbers){
+    let max = numbers[0];
+for(const number of numbers){
+   if(number>max){
+     max = number;
+   }
+}
+return max;
+}
+
+const getMaxi = getHeight(heights);
+console.log(getMaxi);
+
+
+
+
+
+//upto 100: ---> 100
+//more than 101-200: ---> 90
+//more than 200: ---> 70
+
+
+function discountPrice (quantity){
+
+    if(quantity <=100){
+        const total = quantity * 100;
+        return total;
+    }
+    else if(quantity >=101 && quantity<= 200){
+        const total = quantity * 90;
+        return total;
+    }
+    else{
+        const total = quantity * 70;
+        return total;
+    }
+}
+const total= discountPrice(201);
+console.log(total);
+
+
+
+//first100 --> 100
+//second200 -->90
+//above200 -->70
+
+
+
+function layerDiscountTotal (quantity){
+    const first100Price = 100;
+    const second100Price = 90;
+    const above200Price = 70;
+
+    if(quantity <=100){
+        const total = quantity * first100Price;
+        return total;
+    }
+    else if(quantity <=200){
+        const first100Total = 100 *first100Price;
+        const remainingQuantity = quantity - 100;
+        const remainingTotal = remainingQuantity * second100Price;
+        const total = remainingTotal + first100Total;
+        return total;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
