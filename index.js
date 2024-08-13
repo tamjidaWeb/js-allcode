@@ -1145,34 +1145,34 @@ const products = {
 // console.log(number);
 // }
 
-const items = [
-    {id: 1, name: 'walton phone', price: 34000},
-    {id: 2, name: 'iphone', price: 134000},
-    {id: 3, name: 'mac book LAptop', price: 24000},
-    {id: 4, name: 'xiaomi phone', price: 19000},
-    {id: 5, name: 'lenevo LAPTOP', price: 21000},
-    {id: 6, name: 'dell', price: 76000},
-    {id: 7, name: 'samsund note 7', price: 14000},
-    {id: 8, name: 'nokia old age Phone', price: 47000},
+// const items = [
+//     {id: 1, name: 'walton phone', price: 34000},
+//     {id: 2, name: 'iphone', price: 134000},
+//     {id: 3, name: 'mac book LAptop', price: 24000},
+//     {id: 4, name: 'xiaomi phone', price: 19000},
+//     {id: 5, name: 'lenevo LAPTOP', price: 21000},
+//     {id: 6, name: 'dell', price: 76000},
+//     {id: 7, name: 'samsund note 7', price: 14000},
+//     {id: 8, name: 'nokia old age Phone', price: 47000},
 
-];
+// ];
 
 // for(const item of items){
 //     console.log(item);
 // }
 
 
-function matchedProducts(items, search){
-    const matched = [];
-    for( const item of items){
-        if(item.name.toLowerCase().includes(search.toLowerCase())){
-            matched.push(item);
-        }
-    }
-    return matched;
-}
-const result = matchedProducts(items, 'laptop');
-console.log(result);
+// function matchedProducts(items, search){
+//     const matched = [];
+//     for( const item of items){
+//         if(item.name.toLowerCase().includes(search.toLowerCase())){
+//             matched.push(item);
+//         }
+//     }
+//     return matched;
+// }
+// const result = matchedProducts(items, 'laptop');
+// console.log(result);
 
 
 
@@ -1218,44 +1218,44 @@ const max =getMax( max1, max2);
 // }
 
 
-function maxOfThree(jim, kim, tim){
-    if(jim> tim && jim>kim){
-        return 'jim is the ultimate boss';
-    }
+// function maxOfThree(jim, kim, tim){
+//     if(jim> tim && jim>kim){
+//         return 'jim is the ultimate boss';
+//     }
     
-    else if(tim>jim && tim>kim){
-        return 'tim is bigger';
-    }
-    else{
-        return 'kim will be biggest';
-    }
-}
-const maxim = maxOfThree(90, 123, 19);
-// console.log(maxim);
+//     else if(tim>jim && tim>kim){
+//         return 'tim is bigger';
+//     }
+//     else{
+//         return 'kim will be biggest';
+//     }
+// }
+// const maxim = maxOfThree(90, 123, 19);
+// // console.log(maxim);
 
 
 
 
-const maxi = Math.max(12,145,1);
+// const maxi = Math.max(12,145,1);
 // console.log(maxi);
 
 
 
-const heights = [ 65, 76, 82, 90, 60, 69];
-const numbers= [0];
+// const heights = [ 65, 76, 82, 90, 60, 69];
+// const numbers= [0];
 
-function getHeight( numbers){
-    let max = numbers[0];
-for(const number of numbers){
-   if(number>max){
-     max = number;
-   }
-}
-return max;
-}
+// function getHeight( numbers){
+//     let max = numbers[0];
+// for(const number of numbers){
+//    if(number>max){
+//      max = number;
+//    }
+// }
+// return max;
+// }
 
-const getMaxi = getHeight(heights);
-console.log(getMaxi);
+// const getMaxi = getHeight(heights);
+// console.log(getMaxi);
 
 
 
@@ -1405,36 +1405,53 @@ console.log(getMaxi);
 
 
 
-function multiply(num1, num2){
-    if(typeof num2 !== 'number' || typeof num1 !== 'number'){
-        return 'provide a number';
+// function multiply(num1, num2){
+//     if(typeof num2 !== 'number' || typeof num1 !== 'number'){
+//         return 'provide a number';
+//     }
+//     const result = num1 * num2;
+//     return result;
+// }
+// const mul = multiply(6, 5);
+// // console.log(mul);
+
+// function fullName(first, second){
+//     if(typeof first !== 'string' ){
+//         return 'provide a string';
+//     }
+//     else if(typeof second !== 'string'){
+//         return 'second name will be string'
+//     }
+//     const full = first + ' ' + second;
+//     return full;
+// }
+// const ful = fullName( 'jyoti');
+// // console.log(ful);
+
+
+// function getprice(product){
+//     if(typeof product !== 'object'){
+//         return 'not objects';
+//     }
+//     const price = product.price;
+//     return price;
+// }
+// // const price = getprice({name: 'aam', price:50, color:'yellow'});
+// const price = getprice(6);
+// console.log(price);
+
+
+
+function getSecond(numbers){
+    if(Array.isArray(numbers) === false){
+        return ' please provide an array';
     }
-    const result = num1 * num2;
-    return result;
+    // console.log(typeof numbers);
+    const second = numbers[1];
+    return second;
 }
-const mul = multiply(6, 5);
-// console.log(mul);
-
-function fullName(first, second){
-    if(typeof first !== 'string' ){
-        return 'provide a string';
-    }
-    else if(typeof second !== 'string'){
-        return 'second name will be string'
-    }
-    const full = first + ' ' + second;
-    return full;
-}
-const ful = fullName( 8,'jyoti');
-console.log(ful);
-
-
-
-
-
-
-
-
+const second = getSecond([3,1,8,6,9,4,7,3,2]);
+console.log(second);
 
 
 
