@@ -1406,14 +1406,27 @@ console.log(getMaxi);
 
 
 function multiply(num1, num2){
+    if(typeof num2 !== 'number' || typeof num1 !== 'number'){
+        return 'provide a number';
+    }
     const result = num1 * num2;
     return result;
 }
-const mul = multiply(4, 8);
-console.log(mul);
+const mul = multiply(6, 5);
+// console.log(mul);
 
-
-
+function fullName(first, second){
+    if(typeof first !== 'string' ){
+        return 'provide a string';
+    }
+    else if(typeof second !== 'string'){
+        return 'second name will be string'
+    }
+    const full = first + ' ' + second;
+    return full;
+}
+const ful = fullName( 8,'jyoti');
+console.log(ful);
 
 
 
