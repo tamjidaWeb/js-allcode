@@ -1266,49 +1266,154 @@ console.log(getMaxi);
 //more than 200: ---> 70
 
 
-function discountPrice (quantity){
+// function discountPrice (quantity){
 
-    if(quantity <=100){
-        const total = quantity * 100;
-        return total;
-    }
-    else if(quantity >=101 && quantity<= 200){
-        const total = quantity * 90;
-        return total;
-    }
-    else{
-        const total = quantity * 70;
-        return total;
-    }
+//     if(quantity <=100){
+//         const total = quantity * 100;
+//         return total;
+//     }
+//     else if(quantity >=101 && quantity<= 200){
+//         const total = quantity * 90;
+//         return total;
+//     }
+//     else{
+//         const total = quantity * 70;
+//         return total;
+//     }
+// }
+// const total= discountPrice(201);
+// console.log(total);
+
+
+
+// //first100 --> 100
+// //second200 -->90
+// //above200 -->70
+
+
+
+// function layerDiscountTotal (quantity){
+//     const first100Price = 100;
+//     const second100Price = 90;
+//     const above200Price = 70;
+
+//     if(quantity <=100){
+//         const total = quantity * first100Price;
+//         return total;
+//     }
+//     else if(quantity <=200){
+//         const first100Total = 100 *first100Price;
+//         const remainingQuantity = quantity - 100;
+//         const remainingTotal = remainingQuantity * second100Price;
+//         const total = remainingTotal + first100Total;
+//         return total;
+//     }
+
+//     else{
+//         const first100Total = 100 *first100Price;
+//         const second100Total = 100 * second100Price;
+//         const remainingQuantity = quantity - 200;
+//         const remaingTotal = remainingQuantity * above200Price;
+//         const total = remaingTotal + second100Total + first100Total;
+//         return total;
+//     }
+// }
+
+
+
+// function add(num1, num2){
+//     return num1 + num2;
+// }
+
+// function subtruct(num1, num2){
+//     return num1 - num2;
+// }
+
+// function multiply(num1, num2){
+//     return num1 * num2;
+// }
+// function divide(num1, num2){
+//     return num1/num2;
+// }
+
+
+// function calculator (a, b, operation){
+//     if(operation === 'add'){
+//         const result = add(a, b);
+//         return result;
+//     }
+//     else if(operation === 'substruct'){
+//         const result = subtruct(a,b);
+//         return result;
+//     }
+//     else if(operation ==='multiply'){
+//         const result = multiply(a, b);
+//         return result;
+//     }
+//     else if (operation === 'divide'){
+//         const result = divide(a, b);
+//         return result;
+//     }
+//     else{
+//         return 'operation is not valid';
+//     }
+// }
+
+// const results = calculator(7, 'substruct');
+// console.log(results);
+
+
+
+
+// function add(num1, num2){
+//     return num1 + num2;
+// }
+// function substruct(num1, num2){
+//     return num1-num2;
+// }
+// function multiply(num1, num2){
+//     return num1*num2;
+// }
+// function divide(num1, num2){
+//     return num1/num2;
+// }
+// function calculators(a,b, operation){
+//     if(operation === 'add'){
+//         const result = add(a,b);
+//         return result; 
+//     }
+//     else if(operation === 'substruct'){
+//         const result = sub(a,b);
+//         return result;
+//     }
+//     else if(operation === 'multiply'){
+//         const result = multiply(a,b);
+//         return result;
+//     }
+//     else if(operation === 'divide'){
+//         const result = divide(a,b);
+//         return result;
+
+//     }
+//     else{
+//         return 'not valid';
+//     }
+// }
+// const calculator = calculators(3,5, 'substruct');
+// console.log(calculator);
+
+
+
+
+function multiply(num1, num2){
+    const result = num1 * num2;
+    return result;
 }
-const total= discountPrice(201);
-console.log(total);
+const mul = multiply(4, 8);
+console.log(mul);
 
 
 
-//first100 --> 100
-//second200 -->90
-//above200 -->70
-
-
-
-function layerDiscountTotal (quantity){
-    const first100Price = 100;
-    const second100Price = 90;
-    const above200Price = 70;
-
-    if(quantity <=100){
-        const total = quantity * first100Price;
-        return total;
-    }
-    else if(quantity <=200){
-        const first100Total = 100 *first100Price;
-        const remainingQuantity = quantity - 100;
-        const remainingTotal = remainingQuantity * second100Price;
-        const total = remainingTotal + first100Total;
-        return total;
-    }
-}
 
 
 
