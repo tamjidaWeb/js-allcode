@@ -1544,11 +1544,7 @@ function calculateElectronicsBudget(laptop,tablet,mobile){
 
 
 }
-// const numberOfLaptop =2;
-// const numberofTablets =3;
-// const  numofMobile =1;
-const total = calculateElectronicsBudget(2,4,1);
-console.log(total);
+
 
 
 
