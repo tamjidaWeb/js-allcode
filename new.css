@@ -1,0 +1,38 @@
+.container{
+    width: 600px;
+    height:150px;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+#colorCode{
+    margin-top: 10px;
+}
+button{
+    padding: 10px 15px;
+    margin: 10px;
+}
+button:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+body{
+    text-align: center;
+    margin: 0 auto;
+}
+#colorBox{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+#copyButton{
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#copyButton:hover{
+    background-color: rgb(5, 61, 5);
+}
