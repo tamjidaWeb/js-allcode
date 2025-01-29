@@ -172,32 +172,68 @@ const updateColor = ()=>{
     const colorCode = document.getElementById('colorCode');
     colorCode.innerHTML= color;
 }
-const copyColorCode = () =>{
-    const colorCode = document.getElementById('colorCode');
-    const inputTag = document.createElement('input');
-    document.body.appendChild(inputTag);
-    inputTag.value=colorCode.innerText;
-    inputTag.select();
-    document.execCommand('copy');
-    document.body.removeChild(inputTag);
-    alert('copied on clipboard')
+// const copyColorCode = () =>{
+//     const colorCode = document.getElementById('colorCode');
+//     const inputTag = document.createElement('input');
+//     document.body.appendChild(inputTag);
+//     inputTag.value=colorCode.innerText;
+//     inputTag.select();
+//     document.execCommand('copy');
+//     document.body.removeChild(inputTag);
+//     alert('copied on clipboard')
+// }
+// document.getElementById('copyButton').addEventListener('click', ()=>{
+//     copyColorCode();
+// })
+
+
+// function generateNewColorBtn()
+// {
+//     updateColor();
+// }
+
+
+const timerDisplay= document.getElementById('timer');
+const startBtn = document.getElementById('start-btn');
+const stopBtn = document.getElementById('stop-btn');
+let timeLeft;
+
+
+const startTimer = (duration)=>{
+    let timer = duration;
+    const timerInterval=setInterval(()=>{  
+     const minutes= parseInt(timer/60,10);
+     const seconds = parseInt(timer % 60, 10);
+
+    const displayMinutes=  minutes<10 ? '0' + minutes : minutes;
+    const displaySeconds= seconds<10 ? '0'+ seconds : seconds;
+
+     timerDisplay.textContent = displayMinutes+': '+displaySeconds;
+
+     if(--timer<0){
+        clearInterval(timerInterval);
+        timerDisplay.textContent = ' Breath Out';
+
+        setTimeout(() => {
+            timerDisplay.textContent = 'Brath In';
+            startTimer(timeLeft);
+        }, 5000);
+
+     }
+
+    },1000);
+    
+
 }
-document.getElementById('copyButton').addEventListener('click', ()=>{
-    copyColorCode();
+startBtn.addEventListener('click', ()=>{
+  timeLeft = 15;
+    startTimer(timeLeft);
+    
 })
-
-
-function generateNewColorBtn()
-{
-    updateColor();
-}
-
-
-
-
-
-
-
+stopBtn.addEventListener('click', ()=>{
+    console.log('hi');
+    
+})
 
 
 
