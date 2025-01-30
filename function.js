@@ -158,20 +158,20 @@
 
 
 
-const generateRGBcolor = () => {
-    const r = Math.floor(Math.random()*255);
-    const g = Math.floor(Math.random()*255);
-    const b = Math.floor(Math.random()*255);
-    return `rgb(${r}, ${g}, ${b})`;
-}
+// const generateRGBcolor = () => {
+//     const r = Math.floor(Math.random()*255);
+//     const g = Math.floor(Math.random()*255);
+//     const b = Math.floor(Math.random()*255);
+//     return `rgb(${r}, ${g}, ${b})`;
+// }
 
-const updateColor = ()=>{
-    const color = generateRGBcolor();
-    const colorBox = document.getElementById('colorBox');
-    colorBox.style.backgroundColor = color;
-    const colorCode = document.getElementById('colorCode');
-    colorCode.innerHTML= color;
-}
+// const updateColor = ()=>{
+//     const color = generateRGBcolor();
+//     const colorBox = document.getElementById('colorBox');
+//     colorBox.style.backgroundColor = color;
+//     const colorCode = document.getElementById('colorCode');
+//     colorCode.innerHTML= color;
+// }
 // const copyColorCode = () =>{
 //     const colorCode = document.getElementById('colorCode');
 //     const inputTag = document.createElement('input');
@@ -281,44 +281,40 @@ const updateColor = ()=>{
 
 
 
-const addTask =()=>{
-    const taskInput = document.getElementById('taskInput');
-    const taskiInputValue =taskInput.value.trim();
-    if(taskiInputValue !== '')
-    {
-        const taskListUl = document.getElementById('taskList');
-        const li = document.createElement('li');
-        li.innerHTML='<input type="checkbox" >'+taskiInputValue+' <button onclick= "deleteTask(this)">Delete</button>';
-        taskListUl.appendChild(li);
+// const addTask =()=>{
+//     const taskInput = document.getElementById('taskInput');
+//     const taskiInputValue =taskInput.value.trim();
+//     if(taskiInputValue !== '')
+//     {
+//         const taskListUl = document.getElementById('taskList');
+//         const li = document.createElement('li');
+//         li.innerHTML='<input type="checkbox" >'+taskiInputValue+' <button onclick= "deleteTask(this)">Delete</button>';
+//         taskListUl.appendChild(li);
 
-        taskInput.value='';
-    }
-    else{
-        alert('please add new task')
-    }
+//         taskInput.value='';
+//     }
+//     else{
+//         alert('please add new task')
+//     }
     
-}
-
-
-const deleteTask=(btn)=>{
-    const li= btn.parentNode;
-    li.parentNode.removeChild(li)
+// }
+// const deleteTask=(btn)=>{
+//     const li= btn.parentNode;
+//     li.parentNode.removeChild(li)
     
-}
-
-
-const deleteTaskChecked=()=>{
-    const taskList = document.getElementById('taskList');
-    const checkBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    checkBoxes.forEach(checkbox=>{
-        const li =checkbox.parentNode;
-        li.parentNode.removeChild(li);
+// }
+// const deleteTaskChecked=()=>{
+//     const taskList = document.getElementById('taskList');
+//     const checkBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+//     checkBoxes.forEach(checkbox=>{
+//         const li =checkbox.parentNode;
+//         li.parentNode.removeChild(li);
         
         
-    })
-    
-    
-}
+//     }) 
+// }
+
+
 
 
 
