@@ -288,7 +288,7 @@ const addTask =()=>{
     {
         const taskListUl = document.getElementById('taskList');
         const li = document.createElement('li');
-        li.innerHTML='<input type="checkbox" >'+taskiInputValue+' <button>Delete</button>';
+        li.innerHTML='<input type="checkbox" >'+taskiInputValue+' <button onclick= "deleteTask(this)">Delete</button>';
         taskListUl.appendChild(li);
 
         taskInput.value='';
@@ -298,6 +298,16 @@ const addTask =()=>{
     }
     
 }
+
+
+const deleteTask=(btn)=>{
+    const li= btn.parentNode;
+    li.parentNode.removeChild(li)
+    
+}
+
+
+
 
 
 
