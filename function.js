@@ -307,7 +307,18 @@ const deleteTask=(btn)=>{
 }
 
 
-
+const deleteTaskChecked=()=>{
+    const taskList = document.getElementById('taskList');
+    const checkBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    checkBoxes.forEach(checkbox=>{
+        const li =checkbox.parentNode;
+        li.parentNode.removeChild(li);
+        
+        
+    })
+    
+    
+}
 
 
 
