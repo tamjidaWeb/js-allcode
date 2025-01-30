@@ -253,27 +253,69 @@ const updateColor = ()=>{
 
 
 
-const extractText = ()=>{
-    const inputFile= document.getElementById('imageInput');
-    const output = document.getElementById('output');
+// const extractText = ()=>{
+//     const inputFile= document.getElementById('imageInput');
+//     const output = document.getElementById('output');
 
-    const imageFile = inputFile.files[0];
+//     const imageFile = inputFile.files[0];
 
-    if(!imageFile){
-        output.textContent = 'please select'
-        return;
+//     if(!imageFile){
+//         output.textContent = 'please select'
+//         return;
+//     }
+
+//     Tesseract.recognize(
+//         imageFile,
+//         'eng'
+//     ).then(({data})=>{
+//         output.textContent = data.text;
+//     }).catch((err)=>{
+//         console.error('error', error);
+//         output.textContent = 'error;'
+//     })
+// }
+
+
+
+
+
+
+
+const addTask =()=>{
+    const taskInput = document.getElementById('taskInput');
+    const taskiInputValue =taskInput.value.trim();
+    if(taskiInputValue !== '')
+    {
+        const taskListUl = document.getElementById('taskList');
+        const li = document.createElement('li');
+        li.innerHTML='<input type="checkbox" >'+taskiInputValue+' <button>Delete</button>';
+        taskListUl.appendChild(li);
+
+        taskInput.value='';
     }
-
-    Tesseract.recognize(
-        imageFile,
-        'eng'
-    ).then(({data})=>{
-        output.textContent = data.text;
-    }).catch((err)=>{
-        console.error('error', error);
-        output.textContent = 'error;'
-    })
+    else{
+        alert('please add new task')
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
