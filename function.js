@@ -197,11 +197,12 @@ const timerDisplay= document.getElementById('timer');
 const startBtn = document.getElementById('start-btn');
 const stopBtn = document.getElementById('stop-btn');
 let timeLeft;
+let  timerInterval;
 
 
 const startTimer = (duration)=>{
     let timer = duration;
-    const timerInterval=setInterval(()=>{  
+     timerInterval=setInterval(()=>{  
      const minutes= parseInt(timer/60,10);
      const seconds = parseInt(timer % 60, 10);
 
@@ -231,7 +232,7 @@ startBtn.addEventListener('click', ()=>{
     
 })
 stopBtn.addEventListener('click', ()=>{
-    console.log('hi');
+   clearInterval(timerInterval)
     
 })
 
