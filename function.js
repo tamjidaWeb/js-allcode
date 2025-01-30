@@ -198,6 +198,7 @@ const startBtn = document.getElementById('start-btn');
 const stopBtn = document.getElementById('stop-btn');
 let timeLeft;
 let  timerInterval;
+let isRunning = false;
 
 
 const startTimer = (duration)=>{
@@ -227,12 +228,23 @@ const startTimer = (duration)=>{
 
 }
 startBtn.addEventListener('click', ()=>{
-  timeLeft = 15;
+if(!isRunning){
+    timeLeft = 15;
     startTimer(timeLeft);
+    isRunning = true;
+}
     
 })
+
+
+const stopTimer = ()=>{
+    clearInterval(timerInterval);
+    timerDisplay.textContent = 'Breath In';
+    isRunning= false;
+}
 stopBtn.addEventListener('click', ()=>{
-   clearInterval(timerInterval)
+    stopTimer();
+  isRunning= false;
     
 })
 
