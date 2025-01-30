@@ -193,60 +193,95 @@ const updateColor = ()=>{
 // }
 
 
-const timerDisplay= document.getElementById('timer');
-const startBtn = document.getElementById('start-btn');
-const stopBtn = document.getElementById('stop-btn');
-let timeLeft;
-let  timerInterval;
-let isRunning = false;
+// const timerDisplay= document.getElementById('timer');
+// const startBtn = document.getElementById('start-btn');
+// const stopBtn = document.getElementById('stop-btn');
+// let timeLeft;
+// let  timerInterval;
+// let isRunning = false;
 
 
-const startTimer = (duration)=>{
-    let timer = duration;
-     timerInterval=setInterval(()=>{  
-     const minutes= parseInt(timer/60,10);
-     const seconds = parseInt(timer % 60, 10);
+// const startTimer = (duration)=>{
+//     let timer = duration;
+//      timerInterval=setInterval(()=>{  
+//      const minutes= parseInt(timer/60,10);
+//      const seconds = parseInt(timer % 60, 10);
 
-    const displayMinutes=  minutes<10 ? '0' + minutes : minutes;
-    const displaySeconds= seconds<10 ? '0'+ seconds : seconds;
+//     const displayMinutes=  minutes<10 ? '0' + minutes : minutes;
+//     const displaySeconds= seconds<10 ? '0'+ seconds : seconds;
 
-     timerDisplay.textContent = displayMinutes+': '+displaySeconds;
+//      timerDisplay.textContent = displayMinutes+': '+displaySeconds;
 
-     if(--timer<0){
-        clearInterval(timerInterval);
-        timerDisplay.textContent = ' Breath Out';
+//      if(--timer<0){
+//         clearInterval(timerInterval);
+//         timerDisplay.textContent = ' Breath Out';
 
-        setTimeout(() => {
-            timerDisplay.textContent = 'Brath In';
-            startTimer(timeLeft);
-        }, 5000);
+//         setTimeout(() => {
+//             timerDisplay.textContent = 'Brath In';
+//             startTimer(timeLeft);
+//         }, 5000);
 
-     }
+//      }
 
-    },1000);
+//     },1000);
     
 
-}
-startBtn.addEventListener('click', ()=>{
-if(!isRunning){
-    timeLeft = 15;
-    startTimer(timeLeft);
-    isRunning = true;
-}
+// }
+// startBtn.addEventListener('click', ()=>{
+// if(!isRunning){
+//     timeLeft = 15;
+//     startTimer(timeLeft);
+//     isRunning = true;
+// }
     
-})
+// })
 
 
-const stopTimer = ()=>{
-    clearInterval(timerInterval);
-    timerDisplay.textContent = 'Breath In';
-    isRunning= false;
-}
-stopBtn.addEventListener('click', ()=>{
-    stopTimer();
-  isRunning= false;
+// const stopTimer = ()=>{
+//     clearInterval(timerInterval);
+//     timerDisplay.textContent = 'Breath In';
+//     isRunning= false;
+// }
+// stopBtn.addEventListener('click', ()=>{
+//     stopTimer();
+//   isRunning= false;
     
-})
+// })
+
+
+
+
+
+
+const extractText = ()=>{
+    const inputFile= document.getElementById('imageInput');
+    const output = document.getElementById('output');
+
+    const imageFile = inputFile.files[0];
+
+    if(!imageFile){
+        output.textContent = 'please select'
+        return;
+    }
+
+    Tesseract.recognize(
+        imageFile,
+        'eng'
+    ).then(({data})=>{
+        output.textContent = data.text;
+    }).catch((err)=>{
+        console.error('error', error);
+        output.textContent = 'error;'
+    })
+}
+
+
+
+
+
+
+
+
 
 
 
