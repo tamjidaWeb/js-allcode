@@ -316,6 +316,26 @@
 
 
 
+let currentIndex=0;
+
+const showSlide =(index)=>{
+    const slides = document.getElementById('slides');
+    const totalSlide = slides.children.length;
+   
+
+    if(index >= totalSlide){
+        currentIndex = 0;
+    }
+}
+showSlide();
+const nextSlide=()=>{
+    showSlide(currentIndex + 1);
+    
+}
+const prevSlide=()=>{
+    showSlide(currentIndex - 1);
+    
+}
 
 
 
