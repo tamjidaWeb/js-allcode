@@ -326,8 +326,18 @@ const showSlide =(index)=>{
     if(index >= totalSlide){
         currentIndex = 0;
     }
+
+    else if(index <0){
+        currentIndex = totalSlide -1;
+
+    }
+    else{
+        currentIndex = index;
+    }
+
+    slides.style.transform = `translateX(${-currentIndex*100}%)`
 }
-showSlide();
+
 const nextSlide=()=>{
     showSlide(currentIndex + 1);
     
