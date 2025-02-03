@@ -16,10 +16,13 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sliders{
+.slides{
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 300%; /* Should be total slides * 100% */
+    /* width: 500px; */
+    width: 500px;
+    height: 300px;
+    /* width: 300%; Should be total slides * 100% */
 }
 
 .slide{

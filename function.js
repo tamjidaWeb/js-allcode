@@ -316,36 +316,139 @@
 
 
 
-let currentIndex=0;
+// let currentIndex=0;
 
-const showSlide =(index)=>{
-    const slides = document.getElementById('slides');
-    const totalSlide = slides.children.length;
+// const showSlide =(index)=>{
+//     const slides = document.getElementById('slides');
+//     const totalSlides = slides.children.length;
    
 
-    if(index >= totalSlide){
-        currentIndex = 0;
-    }
+//     if(index >= totalSlides){
+//         currentIndex = 0;
+//     }
 
-    else if(index <0){
-        currentIndex = totalSlide -1;
+//     else if(index <0){
+//         currentIndex = totalSlides -1;
 
-    }
-    else{
-        currentIndex = index;
-    }
+//     }
+//     else{
+//         currentIndex = index;
+//     }
 
-    slides.style.transform = `translateX(${-currentIndex*100}%)`
-}
+//     slides.style.transform = `translateX(${-currentIndex*100}%)`
+// }
 
-const nextSlide=()=>{
-    showSlide(currentIndex + 1);
+// const nextSlide=()=>{
+//     showSlide(currentIndex + 1);
     
-}
-const prevSlide=()=>{
-    showSlide(currentIndex - 1);
+// }
+// const prevSlide=()=>{
+//     showSlide(currentIndex - 1);
     
+// }
+
+
+
+// const getWeather =()=>{
+//     const city=document.getElementById('cityInput').value;
+//     const apiKey='f9ce69eabcf2e5f4bafe1086d1af8547';
+//     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    
+
+//     fetch(apiUrl)
+//     .then(res =>res.json())
+//     .then(data =>{
+//         const weatherInfo = document.getElementById('weatherInfo');
+//         const description = data.weather[0].description;
+//         const temperature = data.main.temp;
+//         const humidity = data.main.humidity;
+//         const windSpeed = data.wind.speed;
+
+//         weatherInfo.innerHTML = `
+//             <p>Description: ${description} </p>
+//             <h4>Temperature: ${temperature} &#8451</h4>
+//             <p>Humidity: ${humidity}%</p>
+//             <p>Wind Speed: ${windSpeed} m/s</p>
+//         `;
+        
+//     }
+        
+//     )
+//     .catch(error =>{
+//         console.log('data not valid', error);
+//         document.getElementById('weatherInfo').textContent = 'city not found'
+//     })
+// }   
+
+
+
+
+// const calculateTip=()=>{
+//    const billAmount= parseFloat(document.getElementById('billAmount').value);
+//    const tipParcentage =parseFloat(document.getElementById('tipParcentage').value);
+//    console.log('tipParcentage',tipParcentage);
+
+//    if(isNaN(billAmount)|| isNaN(tipParcentage)){
+//     document.getElementById('result').innerText = 'enter valid number';
+//     return;
+//    }
+
+//    const tipAmount = (billAmount* tipParcentage)/100;
+//    const totalAmount =billAmount+tipAmount;
+
+//    document.getElementById('result').innerHTML = `
+//         <p>Tip Amount :$${tipAmount.toFixed(2)}</p>
+//         <p>Tip Amount :$${totalAmount.toFixed(2)}</p>
+   
+//    `
+   
+// }
+
+const recipieResult= document.getElementById('recipieResult');
+
+const searchButton = () =>{
+   const searchInput= document.getElementById('searchInput').value;
+   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
+   .then(res=>res.json())
+   .then(data=>{
+      const recipes = data.meals;
+console.log(recipes);
+
+      if(recipes){
+         recipes.forEach(recipe=>{
+            const recipeDiv = document.createElement('div');
+            recipeDiv.innerHTML = `
+               <h3>${recipe.strMeal}</h3>
+               <img src=${recipe.strMealThumb} width="100%">
+               <p>${recipe.strInstructions}</p>
+            `;
+            recipieResult.appendChild(recipeDiv)
+         });
+         document.getElementById('searchInput').value = '';
+      }
+
+      else{
+         recipieResult.innerHTML = '<p>No recipe Found!!</p>'
+      }
+   })
+   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
