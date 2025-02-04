@@ -404,41 +404,58 @@
    
 // }
 
-const recipieResult= document.getElementById('recipieResult');
+// const recipieResult= document.getElementById('recipieResult');
 
-const searchButton = () =>{
-   const searchInput= document.getElementById('searchInput').value;
-   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
-   .then(res=>res.json())
-   .then(data=>{
-      const recipes = data.meals;
-console.log(recipes);
+// const searchButton = () =>{
+//    const searchInput= document.getElementById('searchInput').value;
+//    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
+//    .then(res=>res.json())
+//    .then(data=>{
+//       const recipes = data.meals;
+// console.log(recipes);
 
-      if(recipes){
-         recipes.forEach(recipe=>{
-            const recipeDiv = document.createElement('div');
-            recipeDiv.innerHTML = `
-               <h3>${recipe.strMeal}</h3>
-               <img src=${recipe.strMealThumb} width="100%">
-               <p>${recipe.strInstructions}</p>
-            `;
-            recipieResult.appendChild(recipeDiv)
-         });
-         document.getElementById('searchInput').value = '';
-      }
+//       if(recipes){
+//          recipes.forEach(recipe=>{
+//             const recipeDiv = document.createElement('div');
+//             recipeDiv.innerHTML = `
+//                <h3>${recipe.strMeal}</h3>
+//                <img src=${recipe.strMealThumb} width="100%">
+//                <p>${recipe.strInstructions}</p>
+//             `;
+//             recipieResult.appendChild(recipeDiv)
+//          });
+//          document.getElementById('searchInput').value = '';
+//       }
 
-      else{
-         recipieResult.innerHTML = '<p>No recipe Found!!</p>'
-      }
-   })
+//       else{
+//          recipieResult.innerHTML = '<p>No recipe Found!!</p>'
+//       }
+//    })
    
+// }
+
+
+
+
+const startTyping = () =>{
+   console.log('hello');
 }
 
 
 
 
+document.addEventListener('DOMContentLoaded',()=>{
+   const quotes = ["amr sonar bangla", 
+                  "hello i am jjyoti",
+                  "all that gliter is not gold",
+                  "Be yourself everyone else is already taken.",
+                  "A room without books is like a body without a soul"];
 
-
+         const quoteDisplay= document.getElementById('quote');
+         const inputBox=document.getElementById('inputBox');
+         const startBtn = document.getElementById('startBtn');
+         const resultDiv = document.getElementById('result-div');
+})
 
 
 
