@@ -437,9 +437,9 @@
 
 
 
-const startTyping = () =>{
-   console.log('hello');
-}
+// const startTyping = () =>{
+//    console.log('hello');
+// }
 
 
 
@@ -455,6 +455,45 @@ document.addEventListener('DOMContentLoaded',()=>{
          const inputBox=document.getElementById('inputBox');
          const startBtn = document.getElementById('startBtn');
          const resultDiv = document.getElementById('result-div');
+
+         let currentQuote;
+         let startTime;
+
+         startBtn.addEventListener('click', startTest);
+         inputBox.addEventListener('input', checkInput)
+
+         function startTest(){
+         const randomIndex = Math.floor(Math.random()* quotes.length);
+         currentQuote= quotes[randomIndex];
+         quoteDisplay.textContent = currentQuote;
+         inputBox.value= '';
+         resultDiv.textContent = '';
+         inputBox.removeAttribute('disabled');
+         inputBox.focus();
+
+         startTime = new Date().getTime();
+         console.log(startTime);
+        }
+
+
+        function checkInput(){
+                const typedText = inputBox.value;
+                // console.log(typedText.split(' '));
+                
+
+                if(typedText === currentQuote){
+                        const endTime = new Date().getTime();
+                        const timeTaken = (endTime - startTime)/1000;
+                        const wordsPerMinute = typedText.split(' ').length / timeTaken *60;
+                        inputBox.setAttribute('disabled', 'true');      
+                        resultDiv.textContent = `You typed at ${wordsPerMinute.toFixed(2)} words per minute`;
+                        
+                        ;
+                        
+
+                }
+                
+        }
 })
 
 
